@@ -1,54 +1,7 @@
+<?phpinclude_once'includes/header.php';?>
 <?php
 
-function convert_to_gallons($value, $from_unit) {
-  switch($from_unit) {
-    case 'bucket':
-      return $value * 4;
-      break;
-    case 'butt':
-      return $value * 108;
-      break;
-    case 'firkin':
-      return $value * 9;
-      break;
-    case 'hogshead':
-      return $value * 54;
-      break;
-    case 'pint':
-      return $value * 0.125;
-      break;
-    default:
-      return "Unsupported unit.";
-  }
-}
-  
-function convert_from_gallons($value, $to_unit) {
-  switch($to_unit) {
-    case 'bucket':
-      return $value / 4;
-      break;
-    case 'butt':
-      return $value / 108;
-      break;
-    case 'firkin':
-      return $value / 9;
-      break;
-    case 'hogshead':
-      return $value / 54;
-      break;
-    case 'pint':
-      return $value / 0.125;
-      break;
-    default:
-      return "Unsupported unit.";
-  }
-}
-
-function convert_liquid($value, $from_unit, $to_unit) {
-    $liquid_value = convert_to_gallons($value, $from_unit);
-    $new_value = convert_from_gallons($liquid_value, $to_unit);
-    return $new_value;
-  }
+require_once('includes/functions.php');
 
   $from_value = '';
   $from_unit = '';
@@ -63,13 +16,13 @@ function convert_liquid($value, $from_unit, $to_unit) {
     $to_value = convert_liquid($from_value, $from_unit, $to_unit);
   }
   
-  ?>
+?>
 
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Convert Liquids</title>
+    <title><?php echo $pageTitle; ?></title>
     <link href="styles.css" rel="stylesheet" type="text/css">
   </head>
   <body>
@@ -111,7 +64,7 @@ function convert_liquid($value, $from_unit, $to_unit) {
   
       <br />
       <a href="index.php">Return to menu</a>
-      
+      <?phpinclude_once'includes/footer.php';?>
     </div>
   </body>
 </html>

@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <title>Archaic Conversions</title>
-    <link href="styles.css" rel="stylesheet" type="text/css">
-  </head>
-  <body>
+<?phpinclude_once'includes/header.php';?>
 
     <div id="main-content">
 
@@ -16,6 +9,8 @@
         <li><a href="outdated-irish-length-measurements">Outdated Irish Lengths</a></li>
       </ul>
   
+      <?phpinclude_once'includes/footer.php';?>
+
     </div>
   </body>
 </html>
